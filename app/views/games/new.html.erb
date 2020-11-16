@@ -1,0 +1,13 @@
+<h1> New Game </h1>
+
+<%= @letters %>
+
+
+<form action="/score" method="POST" autocomplete="off">
+  <input type="text" name="word">
+  <input id="tags_list" name="starttime" value="<%= Time.now %>%" type="hidden"/>
+<input name="grid" value="<%= @letters %>" type="hidden"/>
+  <input type="submit">
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+</form>
+
